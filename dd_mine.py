@@ -2408,67 +2408,67 @@ transformation_percent = [0.09] #@param
 # !!   "id": "Prompts"
 # !! }}
 collect_of_prompts = [
-    text_prompts = {
+    {
         0: [
             "A scientist doing experiments that helps the innovation of human society. The experiment will be a great breakthrough in human history.",
         ],
         100: ["This set of prompts start at frame 100"],
     },
-    text_prompts = {
+    {
         0: [
             "I hate that time flies so fast and I only have a very short life. There are so many beautiful things in life but I can only live less than a hundred years.",
         ],
         100: ["This set of prompts start at frame 100"],
     },
-    text_prompts = {
+    {
         0: [
             "Prime numbers in turbulence.",
         ],
         100: ["This set of prompts start at frame 100"],
     },
-    text_prompts = {
+    {
         0: [
             "People creating the god.",
         ],
         100: ["This set of prompts start at frame 100"],
     },
-    text_prompts = {
+    {
         0: [
             "Spinning quantum, fiber bundle.",
         ],
         100: ["This set of prompts start at frame 100"],
     },
-    text_prompts = {
+    {
         0: [
             "Vectors supporting a coffee mug and donuts.",
         ],
         100: ["This set of prompts start at frame 100"],
     },
-    text_prompts = {
+    {
         0: [
             "A neural network that can distinguish cant and dog.",
         ],
         100: ["This set of prompts start at frame 100"],
     },
-    text_prompts = {
+    {
         0: [
             "The light in a lab enlightens a dark night.",
         ],
         100: ["This set of prompts start at frame 100"],
     },
-    text_prompts = {
+    {
         0: [
             "The complex canvas is filled with blank.",
         ],
         100: ["This set of prompts start at frame 100"],
     },
-    text_prompts = {
+    {
         0: [
             "Generations of scientists finally overcomes a difficulty and make a breakthrough in research.",
         ],
         100: ["This set of prompts start at frame 100"],
     },
-    text_prompts = {
+    {
         0: [
             "Meteors shine in the sky, seas change into farming lands.",
         ],
@@ -2514,7 +2514,7 @@ image_prompts = {
 for curr_prompt_idx in range(len(collect_of_prompts)):
     text_prompts = collect_of_prompts[curr_prompt_idx]
     # change outDirPath and related path
-    outDirPath = os.path.join(outDirPath, '_' + str(curr_prompt_idx))
+    outDirPath = outDirPath + '_' + str(curr_prompt_idx)
     createPath(outDirPath)
     batchFolder = f'{outDirPath}/{batch_name}'
     createPath(batchFolder)
