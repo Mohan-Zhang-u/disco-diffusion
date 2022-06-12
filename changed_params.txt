@@ -1,0 +1,36 @@
+0: [
+        "A scientist doing experiments that helps the innovation of human society. The experiment will be a great breakthrough in human history.",
+        "I hate that time flies so fast and I only have a very short life. There are so many beautiful things in life but I can only live less than a hundred years.",
+        "Prime numbers in turbulence.",
+        "People creating the god.",
+        "Spinning quantum, fiber bundle.",
+        "Vectors supporting a coffee mug and donuts.",
+        "A neural network that can distinguish cant and dog.",
+        "The light in a lab enlightens a dark night.",
+        "The complex canvas is filled with blank.",
+        "Generations of scientists finally overcomes a difficulty and make a breakthrough in research.",
+        "Meteors shine in the sky, seas change into farming lands.",        
+    ],
+
+intermediate_saves = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95]#@param{type: 'raw'}
+
+retain_overwritten_frames = True #@param{type: 'boolean'}
+
+TODO:
+
+cutn_batches: (4|1-8) Each iteration, the AI cuts the image into smaller pieces known as cuts, and compares each cut to the prompt to decide how to guide the next diffusion step.  More cuts can generally lead to better images, since DD has more chances to fine-tune the image precision in each timestep.  
+
+use_secondary_model
+
+The rough order of speed/mem usage is (smallest/fastest to largest/slowest):
+VitB32 1
+RN50 1
+RN101
+VitB16 1
+RN50x4
+RN50x16
+RN50x64
+ViTL14
+For RN50x64 & ViTL14 you may need to use fewer cuts, depending on your VRAM.
+
+clip_guidance_scale: (5000|1500-100000) CGS is one of the most important parameters you will use. It tells DD how strongly you want CLIP to move toward your prompt each timestep.  Higher is generally better, but if CGS is too strong it will overshoot the goal and distort the image. So a happy medium is needed, and it takes experience to learn how to adjust CGS. 
