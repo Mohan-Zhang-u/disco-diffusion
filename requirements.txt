@@ -1,0 +1,13 @@
+lpips
+datetime
+timm
+ftfy
+einops
+pytorch-lightning
+omegaconf
+# git+git@github.com:Mohan-Zhang-u/CLIP.git
+# git+git@github.com:Mohan-Zhang-u/guided-diffusion.git
+# git+git@github.com:Mohan-Zhang-u/ResizeRight.git
+# git+git@github.com:Mohan-Zhang-u/pytorch3d-lite.git
+# git+git@github.com:Mohan-Zhang-u/MiDaS.git
+# git+git@github.com:Mohan-Zhang-u/AdaBins.git

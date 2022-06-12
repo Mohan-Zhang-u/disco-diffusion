@@ -1,0 +1,15 @@
+[submodule "CLIP"]
+	path = CLIP
+	url = git@github.com:Mohan-Zhang-u/CLIP.git
+[submodule "guided-diffusion"]
+	path = guided-diffusion
+	url = git@github.com:Mohan-Zhang-u/guided-diffusion.git
+[submodule "ResizeRight"]
+	path = ResizeRight
+	url = git@github.com:Mohan-Zhang-u/ResizeRight.git
+[submodule "pytorch3d-lite"]
+	path = pytorch3d-lite
+	url = git@github.com:Mohan-Zhang-u/pytorch3d-lite.git
+[submodule "AdaBins"]
+	path = AdaBins
+	url = git@github.com:Mohan-Zhang-u/AdaBins.git
