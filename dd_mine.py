@@ -2508,17 +2508,22 @@ image_prompts = {
 # !! {"metadata":{
 # !!   "id": "DoTheRun"
 # !! }}
-#@title Do the Run!
-#@markdown `n_batches` ignored with animation modes.
-
+original_outDirPath = outDirPath
 for curr_prompt_idx in range(len(collect_of_prompts)):
     text_prompts = collect_of_prompts[curr_prompt_idx]
     # change outDirPath and related path
-    outDirPath = outDirPath + '_' + str(curr_prompt_idx)
+    outDirPath = os.path.join(original_outDirPath, 'image_' + str(curr_prompt_idx))
+    print(f"current outDirPath is {outDirPath}")
     createPath(outDirPath)
     batchFolder = f'{outDirPath}/{batch_name}'
     createPath(batchFolder)
+    partialFolder = f'{batchFolder}/partials'
+    createPath(partialFolder)
+    retainFolder = f'{batchFolder}/retained'
+    createPath(retainFolder)
     
+    #@title Do the Run!
+    #@markdown `n_batches` ignored with animation modes.
     display_rate = 50 #@param{type: 'number'}
     n_batches = 50 #@param{type: 'number'}
 
@@ -2555,7 +2560,7 @@ for curr_prompt_idx in range(len(collect_of_prompts)):
 
 
     if steps <= calc_frames_skip_steps:
-    sys.exit("ERROR: You can't skip more steps than your total steps")
+      sys.exit("ERROR: You can't skip more steps than your total steps")
 
     if resume_run:
         if run_to_resume == 'latest':
