@@ -1915,7 +1915,7 @@ lpips_model = lpips.LPIPS(net='vgg').to(device)
 # !! }}
 #@markdown ####**Basic Settings:**
 batch_name = 'TimeToDisco' #@param{type: 'string'}
-steps = 250 #@param [25,50,100,150,250,500,1000]{type: 'raw', allow-input: true}
+steps = 500 #@param [25,50,100,150,250,500,1000]{type: 'raw', allow-input: true}
 width_height = [1280, 768] #@param{type: 'raw'}
 clip_guidance_scale = 5000 #@param{type: 'number'}
 tv_scale = 0 #@param{type: 'number'}
@@ -2408,18 +2408,18 @@ transformation_percent = [0.09] #@param
 # !!   "id": "Prompts"
 # !! }}
 collect_of_prompts = [
-    {
-        0: [
-            "A scientist doing experiments that helps the innovation of human society. The experiment will be a great breakthrough in human history.",
-        ],
-        100: ["This set of prompts start at frame 100"],
-    },
-    {
-        0: [
-            "I hate that time flies so fast and I only have a very short life. There are so many beautiful things in life but I can only live less than a hundred years.",
-        ],
-        100: ["This set of prompts start at frame 100"],
-    },
+    # {
+    #     0: [
+    #         "A scientist doing experiments that helps the innovation of human society. The experiment will be a great breakthrough in human history.",
+    #     ],
+    #     100: ["This set of prompts start at frame 100"],
+    # },
+    # {
+    #     0: [
+    #         "I hate that time flies so fast and I only have a very short life. There are so many beautiful things in life but I can only live less than a hundred years.",
+    #     ],
+    #     100: ["This set of prompts start at frame 100"],
+    # },
     {
         0: [
             "Prime numbers in turbulence.",
@@ -2506,7 +2506,8 @@ image_prompts = {
 
 # %%
 # !! {"metadata":{
-# !!   "id": "DoTheRun"
+# !!   "id": "DoTheRun",
+# !!   "scrolled": false
 # !! }}
 original_outDirPath = outDirPath
 for curr_prompt_idx in range(len(collect_of_prompts)):
@@ -2525,7 +2526,7 @@ for curr_prompt_idx in range(len(collect_of_prompts)):
     #@title Do the Run!
     #@markdown `n_batches` ignored with animation modes.
     display_rate = 50 #@param{type: 'number'}
-    n_batches = 50 #@param{type: 'number'}
+    n_batches = 10 #@param{type: 'number'}
 
     #Update Model Settings
     timestep_respacing = f'ddim{steps}'

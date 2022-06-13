@@ -16,17 +16,21 @@ intermediate_saves = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 
 
 retain_overwritten_frames = True #@param{type: 'boolean'}
 
-TODO:
+n_batches = 10 #@param{type: 'number'}
+! n_batches: (50|1-100) (maybe 5 should be enough?) This variable sets the number of still images you want DD to create.  If you are using an animation mode (see below for details) DD will ignore n_batches and create a single set of animated frames based on the animation settings.
 
-!!! most important one! steps = 250 #@param [25,50,100,150,250,500,1000]{type: 'raw', allow-input: true}, which is used to control diffusion_steps
+!!! most important one! steps = 500 #@param [25,50,100,150,250,500,1000]{type: 'raw', allow-input: true}, which is used to control diffusion_steps
 steps: (250|50-10000) When creating an image, the denoising curve is subdivided into steps for processing. Each step (or iteration) involves the AI looking at subsets of the image called ‘cuts’ and calculating the ‘direction’ the image should be guided to be more like the prompt. Then it adjusts the image with the help of the diffusion denoiser, and moves to the next step.
 Increasing steps will provide more opportunities for the AI to adjust the image, and each adjustment will be smaller, and thus will yield a more precise, detailed image.  Increasing steps comes at the expense of longer render times.  Also, while increasing steps should generally increase image quality, there is a diminishing return on additional steps beyond 250 - 500 steps.  However, some intricate images can take 1000, 2000, or more steps.  It is really up to the user.  
 Just know that the render time is directly related to the number of steps, and many other parameters have a major impact on image quality, without costing additional time.
 diffusion_steps: (leave at default) This is an internal variable that you should leave alone.  In future DD releases, this will likely be hidden from users, as it’s not meant to be edited directly.
 
+
+TODO:
+
+
 !! Advanced topic: Prompt weights
 
-! n_batches: (50|1-100) (maybe 5 should be enough?) This variable sets the number of still images you want DD to create.  If you are using an animation mode (see below for details) DD will ignore n_batches and create a single set of animated frames based on the animation settings.
 
 ! super resolution later on.
 
@@ -49,3 +53,10 @@ timestep_respacing: (leave at default) This is an internal variable that you sho
 
 clip_guidance_scale: (5000|1500-100000) CGS is one of the most important parameters you will use. It tells DD how strongly you want CLIP to move toward your prompt each timestep.  Higher is generally better, but if CGS is too strong it will overshoot the goal and distort the image. So a happy medium is needed, and it takes experience to learn how to adjust CGS. 
 
+
+
+
+
+
+
+colab-convert Disco_Diffusion.ipynb dd_mine.py
