@@ -24,6 +24,10 @@ Increasing steps will provide more opportunities for the AI to adjust the image,
 Just know that the render time is directly related to the number of steps, and many other parameters have a major impact on image quality, without costing additional time.
 diffusion_steps: (leave at default) This is an internal variable that you should leave alone.  In future DD releases, this will likely be hidden from users, as it’s not meant to be edited directly.
 
+!! Advanced topic: Prompt weights
+
+! n_batches: (50|1-100) This variable sets the number of still images you want DD to create.  If you are using an animation mode (see below for details) DD will ignore n_batches and create a single set of animated frames based on the animation settings.
+
 cutn_batches: (4|1-8) Each iteration, the AI cuts the image into smaller pieces known as cuts, and compares each cut to the prompt to decide how to guide the next diffusion step.  More cuts can generally lead to better images, since DD has more chances to fine-tune the image precision in each timestep.  
 
 use_secondary_model
