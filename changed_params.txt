@@ -26,7 +26,9 @@ diffusion_steps: (leave at default) This is an internal variable that you should
 
 !! Advanced topic: Prompt weights
 
-! n_batches: (50|1-100) This variable sets the number of still images you want DD to create.  If you are using an animation mode (see below for details) DD will ignore n_batches and create a single set of animated frames based on the animation settings.
+! n_batches: (50|1-100) (maybe 5 should be enough?) This variable sets the number of still images you want DD to create.  If you are using an animation mode (see below for details) DD will ignore n_batches and create a single set of animated frames based on the animation settings.
+
+! super resolution later on.
 
 cutn_batches: (4|1-8) Each iteration, the AI cuts the image into smaller pieces known as cuts, and compares each cut to the prompt to decide how to guide the next diffusion step.  More cuts can generally lead to better images, since DD has more chances to fine-tune the image precision in each timestep.  
 
